@@ -31,6 +31,14 @@ class HomaPage extends StatelessWidget {
                     child: CircularProgressIndicator(),
                   );
                 } else {
+                  if (snapshot.data!.docs.isEmpty) {
+                    return Center(
+                      child: Text(
+                        'No Todos',
+                        style: TextStyle(color: Constants.white, fontSize: 25),
+                      ),
+                    );
+                  }
                   final docs = snapshot.data!.docs;
                   return Padding(
                       padding: const EdgeInsets.all(15),

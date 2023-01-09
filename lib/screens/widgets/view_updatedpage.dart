@@ -31,7 +31,7 @@ class ViewPage extends StatelessWidget {
               )),
         ],
         title: Text(
-          'Details',
+          title.toString(),
           style: TextStyle(color: Constants.white),
         ),
       ),
