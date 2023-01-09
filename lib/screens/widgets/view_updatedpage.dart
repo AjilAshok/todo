@@ -81,12 +81,12 @@ class ViewPage extends StatelessWidget {
                 height: 20,
               ),
               ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (formKey.currentState!.validate()) {
-                      DatabaseService().updateTodo(
+                      await DatabaseService().updateTodo(
                           titileControler.text, subTitileControler.text, uid);
+                      Navigator.of(context).pop();
                     }
-                    Navigator.of(context).pop();
                   },
                   child: const Text(
                     'Update',
